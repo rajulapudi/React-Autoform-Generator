@@ -42,6 +42,34 @@ const FormFields = props => {
 					</div>
 				);
 				break;
+			case 'select':
+				formTemplate = (
+					<div>
+						{showlabel(values.label, values.labelText)}
+						<select
+							value={values.value}
+							onChange={event => changeHandler(event, data.id)}>
+							{values.config.option.map((item, i) => (
+								<option key={i} value={item.val}>
+									{item.text}
+								</option>
+							))}
+						</select>
+					</div>
+				);
+				break;
+			case 'textarea':
+				formTemplate = (
+					<div>
+						{showlabel(values.label, values.labelText)}
+						<textarea
+							{...values.config}
+							value={values.value}
+							onChange={event => changeHandler(event, data.id)}
+						/>
+					</div>
+				);
+				break;
 			default:
 				formTemplate = null;
 		}

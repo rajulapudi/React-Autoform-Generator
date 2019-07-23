@@ -24,6 +24,29 @@ class User extends Component {
 					type: 'text',
 					placeholder: 'Enter your last name'
 				}
+			},
+			Message: {
+				element: 'textarea',
+				value: '',
+				label: true,
+				labelText: 'Message',
+				config: {
+					name: 'message',
+					rows: 3
+				}
+			},
+			Age: {
+				element: 'select',
+				value: '',
+				label: true,
+				labelText: 'Age',
+				config: {
+					name: 'age_input',
+					option: [
+						{ val: 'Teenage', text: '13-19' },
+						{ val: 'Adult', text: '20-40' }
+					]
+				}
 			}
 		}
 	};
